@@ -9,7 +9,6 @@ namespace CourseGrader
         {
             int[] testScoresArray = new int[] { 100, 77, 92, 51, 99 };
 
-
                 GradeTestScores(testScoresArray);
 
 
@@ -24,6 +23,7 @@ namespace CourseGrader
         {
             string result;
             
+
             foreach (int testScore in testScoresArray)
             {
 
@@ -45,8 +45,8 @@ namespace CourseGrader
                     Console.WriteLine(result);
                     
                 }
-            }
 
+            }
             
             return Console.ReadLine();
         }
