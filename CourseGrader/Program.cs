@@ -1,15 +1,18 @@
 ﻿using System;
-
 namespace CourseGrader
 {
     public static class Program
     {
+        
+
         public static void Main(string[] args)
         {
-            int[] testScoresArray = new int[] { 70, 49, 60, 75, 92, 88, 100 };
-            Console.WriteLine(GradeTestScores(testScoresArray));
-            Console.ReadLine();
-            
+            int[] testScoresArray = new int[] { 100, 77, 92, 51, 99 };
+
+
+                GradeTestScores(testScoresArray);
+
+
             // create a method named GradeTestScores that takes a int array of test scores as its parameter and returns a string
             // GradeTestScores will add up these test scores and calculate an average score. 
             // It should then return a string of "pass" or "fail" depending on these two conditions:
@@ -17,32 +20,37 @@ namespace CourseGrader
             // If the average score is lower than 70 or at least one test score is below 50, then return a message of "fail".
         }
 
-        public static int[] GradeTestScores(int[] testScoresArray)
+        public static string GradeTestScores(int[] testScoresArray)
         {
-            string result = null;
-
-            foreach (int score in testScoresArray)
+            string result;
+            
+            foreach (int testScore in testScoresArray)
             {
 
                 int sum = 0;
-                sum += score;
+                sum += testScore;
                 int avg = sum / testScoresArray.Length;
 
-                if (score < 50)
-                {
-                    return result = "fail";
 
+                if (avg >= 70 && testScore >= 50)
+                {
+                    result = "pass";
+                    Console.WriteLine(result);
+                    
+                }
+                
+                else if (avg < 70 && testScore < 50)
+                {
+                    result = "fail";
+                    Console.WriteLine(result);
+                    
                 }
             }
 
-            return result;
-  
-
+            
+            return Console.ReadLine();
         }
 
+    }  
 
-            
-       
-
-    }
 }
