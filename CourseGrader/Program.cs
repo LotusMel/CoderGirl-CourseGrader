@@ -7,7 +7,7 @@ namespace CourseGrader
 
         public static void Main(string[] args)
         {
-            int[] testScoresArray = new int[] {  };
+            int[] testScoresArray = new int[] { 0, 0, 0 };
 
             Console.WriteLine(GradeTestScores(testScoresArray));
             Console.ReadLine();
@@ -26,7 +26,7 @@ namespace CourseGrader
             int sum = 0;
             int minScore = 0;
 
-            while (testScoresArray.Length != 0)
+            while (testScoresArray.Length != 0 && sum != 0)
             {
                 foreach (int testScore in testScoresArray)
                 {
@@ -46,14 +46,15 @@ namespace CourseGrader
                     result = "fail";
                 }
 
-                else if (testScoresArray.Length == 0)
+                
+                else if (testScoresArray.Length == 0 || sum == 0)
                 {
                     break;
                 }
                 continue;
             }
-
-            if (testScoresArray.Length == 0)
+            
+            if (testScoresArray.Length == 0 || sum == 0)
             {
                 result = "fail";
             }
