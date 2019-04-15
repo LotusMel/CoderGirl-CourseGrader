@@ -7,9 +7,10 @@ namespace CourseGrader
 
         public static void Main(string[] args)
         {
-            int[] testScoresArray = new int[] { 100, 77, 92, 51, 99 };
+            int[] testScoresArray = new int[] { 25, 81, 92, 67, 100 };
 
-                GradeTestScores(testScoresArray);
+            Console.WriteLine(GradeTestScores(testScoresArray));
+            Console.ReadLine();
 
 
             // create a method named GradeTestScores that takes a int array of test scores as its parameter and returns a string
@@ -21,34 +22,32 @@ namespace CourseGrader
 
         public static string GradeTestScores(int[] testScoresArray)
         {
-            string result;
-            
-
+            string result = null;
+            int sum = 0;
+            int minScore = 0;
             foreach (int testScore in testScoresArray)
             {
-
-                int sum = 0;
                 sum += testScore;
-                int avg = sum / testScoresArray.Length;
-
-
-                if (avg >= 70 && testScore >= 50)
-                {
-                    result = "pass";
-                    Console.WriteLine(result);
-                    
-                }
-                
-                else if (avg < 70 && testScore < 50)
-                {
-                    result = "fail";
-                    Console.WriteLine(result);
-                    
-                }
-
+                minScore = testScoresArray[0];
             }
-            
-            return Console.ReadLine();
+
+            int avg = sum / testScoresArray.Length;
+
+            if (avg >= 70 && minScore >= 50)
+            {
+                result = "pass";
+            }
+
+            else if (avg < 70 || minScore < 50)
+            {
+                result = "fail";
+            }
+
+            else if (testScoresArray.Length == 0)
+            {
+                result = "fail";
+            }
+             return result;
         }
 
     }  
